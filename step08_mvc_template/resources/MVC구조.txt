@@ -1,0 +1,15 @@
+ - MVC구조
+   - Model : Service영역(Business Logic : 알고리즘구현)
+             DAO(Data Access Object) - DB연동부분
+	     DTO(Data Transfer Object ) = VO(Value Object)
+
+   -View : GUI구현(화면구성)
+
+   -Controller : Model과 View 사이에서 중간자 역할.
+                 사용자 요청이 들어오면 그 요청에 해당하는 
+		 Service -> DAO 등을 호출해주고 그 결과를 받아
+		 결과에 해당하는 View쪽을 호출해준다.
+
+
+ -MVC구조를 사용해야하는 이유 : 유지보수, 재사용을 높히고
+                                생산성을 좋게 하기 위함.

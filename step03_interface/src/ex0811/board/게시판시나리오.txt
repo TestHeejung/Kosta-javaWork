@@ -1,0 +1,23 @@
+게시판 유형 3개를 만들자!!
+ 1) QA게시판
+    속성 : (글번호, 제목, 작성자, 내용)  + 답변여부
+    기능  : 등록 수정 삭제 전체검색, 상세보기...
+
+ 2)Upload게시판(글번호, 제목, 작성자, 내용) + 첨부파일
+     기능  : 등록 수정 삭제 전체검색, 상세보기...
+   UploadBoard.java
+       private String fileName;
+
+
+
+ 3)Free게시판 (글번호, 제목, 작성자, 내용) 
+     기능  : 등록 수정 삭제 전체검색, 상세보기...
+
+
+   QABoardServiceImpl.java
+   FreeBoardServiceImpl.java
+   UploadBoardServiceImpl.java
+
+
+  유지보수중에...
+  QA, Free  삭제기능을 추가 !!

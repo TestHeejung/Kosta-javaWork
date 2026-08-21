@@ -90,6 +90,8 @@ public class Profile {
 		
 		
 		try(BufferedInputStream bis = new BufferedInputStream(new FileInputStream(file));){
+			
+			
 			byte b [] = new byte [bis.available()];
 			bis.read(b);
 			

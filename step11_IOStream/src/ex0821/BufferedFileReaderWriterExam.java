@@ -17,6 +17,7 @@ public class BufferedFileReaderWriterExam {
     	  //객체생성
     		//br = new BufferedReader(new FileReader("src/ex0820/a.txt"));
     		br = new BufferedReader(new FileReader("src/ex0820/BufferedFileCopyExam.java"));
+    		
     		//br.read(); //한문자씩 읽기(Reads a single character.)
     		
     		/*int i=0;

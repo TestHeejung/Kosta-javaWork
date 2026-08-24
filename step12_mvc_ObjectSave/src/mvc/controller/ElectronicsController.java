@@ -21,14 +21,18 @@ import mvc.view.SuccessView;
  */
 
 public class ElectronicsController {
-    private ElectronicsService service = ElectronicsServiceImpl.getInstance();
+    private ElectronicsService service;
 
+    public ElectronicsController() {
+    	service = ElectronicsServiceImpl.getInstance();
+    }
     /**
      * 전체검색
      */
     public void selectAll() {
-    	//서비스를 호출하고 그결과를 받아서 결과view 를 호출한다!!!
-    	 List<Electronics> list =  service.selectAll();
+    	 List<Electronics> list = 
+    			   service.selectAll();
+    	 
     	SuccessView.printAll(list);
     }
  
@@ -36,13 +40,13 @@ public class ElectronicsController {
 	 /**
      * 전자제품 등록 (길이 벗어낫는지, 중복여부 체크)
      */
+   
     public void insert(Electronics electronics) {
-    	//서비스를 호출하고 그 결과에 따라 성공, 실패 뷰로 이동
     	try {
     	 service.insert(electronics);
     	 SuccessView.printMessage("등록되었습니다.^^");
-    	 
-    	}catch (ElectronicsArrayBoundsException | DuplicateModelNoEexepction e) {
+    	}catch (ElectronicsArrayBoundsException | 
+    			DuplicateModelNoEexepction e) {
 			FailView.errorMessage( e.getMessage() );
 		}
         
@@ -54,15 +58,13 @@ public class ElectronicsController {
      * 모델번호에 해당하는 전자제품 검색
      * @param modelNo
      */
-    public void searchByModelNo(int modelNo) {//900
-    	//서비스 호출하고 그결과 받아서 성공 or 실패 뷰를 호출한다.
+    public void searchByModelNo(int modelNo) {//100
+    	//서비스
     	try {
 			Electronics elec = service.searchByModelNo(modelNo);
-			
 			SuccessView.printSearchByModelNo(elec);
 			
 		} catch (SearchNotFoundException e) {
-			//요기에 진입했다는것을 오류가 발생했다!!!
 			FailView.errorMessage(   e.getMessage()   );
 		}
     } 
@@ -72,11 +74,9 @@ public class ElectronicsController {
      * @param electronics
      */
     public void update(Electronics electronics) {
-    	//서비스 호출하고 그 결과받아서 성공, 실패 호출
     	try {
     	  service.update(electronics);
     	  SuccessView.printMessage(electronics.getModelNo() + "에 해당하는 상품 정보가 수정되었습니다.");
-    	
     	}catch (SearchNotFoundException e) {
     		FailView.errorMessage(e.getMessage());
 		}
@@ -107,21 +107,17 @@ public class ElectronicsController {
     	List<Electronics> list = service.selectSortByPrice();
     	SuccessView.printAll(list);
     }
-    /////////////////////////////////////////////////////////////////
-    
-    /**
-     * 종료전에 파일에 객체 저장
-     * */
-    public void saveObject() {
-    	try {
-    	  service.saveObject();
-    	  SuccessView.printMessage("파일에 저장 되었습니다.\n다음또 이용해주세요.");
-    	  
-    	}catch (Exception e) {
+
+
+	public void saveObject() {
+		try {
+		  service.saveObject();
+		  
+		  SuccessView.printMessage("파일에 저장완료했습니다.\n다음에 또 이용해주세요");
+		}catch (Exception e) {
 			FailView.errorMessage(e.getMessage());
 		}
-    }
-    
+	}
     
 }
 

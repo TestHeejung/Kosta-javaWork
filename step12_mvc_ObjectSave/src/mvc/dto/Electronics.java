@@ -1,9 +1,13 @@
 package mvc.dto;
+
+import java.io.Serializable;
+
 /**
  * 전자제품의 속성을 관리하는 객체 
  */
 
-public class Electronics /*implements Comparable<Electronics>*/{
+public class Electronics /* implements Comparable<Electronics>*/
+  implements Serializable{//직렬화 대상
     private int modelNo;
     private String modelName;
     private int modelPrice;
@@ -16,6 +20,7 @@ public class Electronics /*implements Comparable<Electronics>*/{
     public Electronics (int modelNo, String modelDetail) {
         this.modelNo = modelNo;
         this.modelDetail = modelDetail;        
+
     }
 
     public Electronics (int modelNo, String modelName, int modelPrice, String modelDetail) {

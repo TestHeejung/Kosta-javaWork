@@ -17,7 +17,7 @@ public class SuccessView {
     public static void printAll(List<Electronics> list){
 		System.out.println("****** 전자제품 총 ("+list.size()+")개 *****************");
         for(Electronics elec : list) {
-           System.out.println(elec);//elec.toString()
+           System.out.println(elec);
         }
 
 		System.out.println();

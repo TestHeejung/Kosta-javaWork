@@ -71,6 +71,7 @@ class Bank{
 	public synchronized  void balnaceChange(String name, boolean state) {
 		if(state) {//입금
 			while(balance==1) {
+			//if(balance==1) {
 				 System.out.println(name+"대기중 ~~ 잔액 : "+ balance);
 				 try {
 				   wait();

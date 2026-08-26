@@ -13,12 +13,17 @@ public class SpecificInstanceMethod03 {
    
 	
      //1. 람다식변경해보자
-	 
+	BiFunction<String, String, Boolean> beforeEquals2 =(s1,s2)->s1.equals(s2);
 	
 	 //2. 메소드 참조로 변경해보자
-	 
+	BiFunction<String, String, Boolean> beforeEquals3 = String :: equals;
  
 	 //3. 호출해보자
+	
+	System.out.println("결과 1 = "+ beforeEquals.apply("jang1", "jang"));
+	System.out.println("결과 2 = "+ beforeEquals2.apply("jang1", "jang"));
+	System.out.println("결과 3 = "+ beforeEquals3.apply("jang1", "jang"));
+	
      
     } 
 } 

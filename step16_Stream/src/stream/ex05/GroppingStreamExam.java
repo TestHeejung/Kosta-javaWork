@@ -20,16 +20,30 @@ public class GroppingStreamExam {
 		
 		
 		 System.out.println("1. 전공별 그룹핑......");
+		 //students.stream().collect(Collectors.groupingBy((s)-> s.getMajor()));
+		 Map<String, List<Student>> map =
+				  students.stream().collect(Collectors.groupingBy(Student:: getMajor));
+		 
+		 System.out.println(map);
 		
 		
 		
-		System.out.println("2. 전공별 학생수 계산(counting)- {Computer Science=2, Mathematics=2, Physics=1}");
+		System.out.println("\n2. 전공별 학생수 계산(counting)- {Computer Science=2, Mathematics=2, Physics=1}");
 		
+	Map<String, Long> map2 = students.stream()
+		.collect(Collectors.groupingBy(Student::getMajor , Collectors.counting()));
 		
+	System.out.println(map2);
+	
+	
+	
+		System.out.println("\n3. 전공별 점수의 평균(ex) {Computer Science=90.4, Mathematics=80.80000000000001, Physics=81.7})");
 		
-		System.out.println("3. 전공별 점수의 평균(ex) {Computer Science=90.4, Mathematics=80.80000000000001, Physics=81.7})");
+		Map<String, Double> map3 = students.stream()
+		.collect(Collectors.groupingBy(Student::getMajor ,Collectors.averagingDouble(Student::getScore) ));
 		
-		
+		System.out.println(map3);
+	  
 
 	}
 

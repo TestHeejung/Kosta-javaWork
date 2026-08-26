@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Predicate;
 
 
 public class Test00 {
@@ -47,10 +48,33 @@ public class Test00 {
 		for(String name : names) {
 			System.out.println(name);
 		}
-		
+		System.out.println("------------------");
 		////////////////////////////////////////////////////////
+		/* 문제
+		 *  : 점수가 80이상인 학생 -> 점수를 기준으로 오름차순 -> 이름 모아서 List로 만들자.
+		 */
+	   //2.Stream이용방식으로 해보자(stream얻기 -> 중간과정 반복-> 최종연산) 
+		/*students
+		.stream()
+		.filter(new Predicate<Student>() {
+			 @Override
+			public boolean test(Student t) {
+				
+				return t.getScore() >=80;
+			}
+		});*/
 		
-	   //2.Stream이용방식으로 해보자
+	List<String> namesList = students
+					         .stream()
+							 .filter((s)-> s.getScore()>80)
+							 //.sorted(Comparator.comparingDouble((s)->s.getScore()));
+							 .sorted(Comparator.comparingDouble(Student:: getScore))
+							 //.map((s)->s.getName());
+							 .map(Student:: getName)
+							 .toList();
+	
+	System.out.println("개수 = "+ namesList.size());
+	System.out.println(namesList);
 		
 	
 	}

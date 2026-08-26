@@ -1,6 +1,5 @@
 package stream.ex02;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -17,30 +16,51 @@ public class MapStreamExam03 {
 		
 		//1. 전체 출력
 		System.out.println("1. 전체 출력------------");
+		list.stream().forEach(System.out::println);
 		
 		
 		
 		//2.점수만 걸러내서 출력
 		System.out.println("2.점수만 걸러내서 출력 ------");
+		//list.stream().map(s->s.getScore());
 		
+		list.stream()
+		.map(Student :: getScore)
+		.forEach(System.out::println);
 		
 		
 		//3. 점수의 총점
 		System.out.println("3.점수의 총점--------");
+		int re = list.stream()
+		.mapToInt(Student :: getScore)
+		.sum();
 		
+		System.out.println("총점 : " + re);
 		
 		//4. 점수의 평균
 		System.out.println("4.점수의 평균--------");
+		double avg = list.stream()
+					.mapToInt(Student :: getScore)
+					.average()
+					.getAsDouble();
+		
+		System.out.println("평균 = " + avg);
 		
 		
 		//5. 점수의 개수(인원수)
 		System.out.println("5. 점수의 개수(인원수)--------");
+		long count= list.stream()
+					.mapToInt(Student :: getScore)
+					.count();
 		
-		
+		System.out.println("인원수 = " +count);
 		
 		//점수가 80 이상인 학생들의 이름만 검색
 		System.out.println("점수가 80 이상인 학생들의 이름만 검색--------");
-		
+		list.stream()
+		.filter(s-> s.getScore()>=80)
+		.map(Student:: getName)
+		.forEach(System.out::println);
 		
 
 	}

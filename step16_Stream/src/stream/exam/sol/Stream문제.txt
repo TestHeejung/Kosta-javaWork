@@ -1,0 +1,74 @@
+/**
+  1)
+ * 평균 점수 구하기 (filter + mapToDouble + average)
+ *  List<Student>에서 전공이 "Computer Science"인 학생들의 평균 점수를 구하시오.
+ * */
+ 
+ /**
+ 2)
+ * 나이가 가장 많은 학생 찾기 (max + Comparator.comparingInt)
+ *   List<Student>에서 나이가 가장 많은 학생의 정보를 출력하시오.
+ * */
+ 
+ 
+ /**
+ 3)
+ * 점수가 80점 이상인 학생 목록 추출 (filter + collect)
+ *   List<Student>에서 점수가 80점 이상인 학생들의 목록을 출력하시오.
+ * */
+ 
+ /**
+ 4)
+ * 전공별 학생 수 구하기 (collect + groupingBy)
+ *   List<Student>에서 전공별 학생 수를 구하시오.
+ * */
+ 
+ /**
+ 5)
+ * 모든 학생 이름을 쉼표(,)로 연결 (map + collect + joining)
+ *   List<Student>에서 모든 학생의 이름을 쉼표(,)로 연결하여 출력하시오.
+ * */
+ 
+ 
+ /**
+ 6)
+ * 나이가 23세 이상인 학생들의 이름 리스트 출력 (filter + map + collect)
+ *  List<Student>에서 나이가 23세 이상인 학생들의 이름을 리스트로 추출하시오.
+ * */
+ 
+ 
+ 
+ /**
+ 7)
+ * 학생의 전공과 점수 목록을 출력 (map + collect)
+ *  List<Student>에서 학생의 전공과 점수를 "전공: 점수" 형태의 리스트로 출력하시오.
+ * */
+ 
+ 
+ 
+ /**
+ 8)
+ * 90점 이상 학생의 전공(Major)을 대문자로 변환하여 출력 (filter + map + collect)
+ *  List<Student>에서 90점 이상인 학생들의 전공(Major)을 대문자로 변환하여 리스트로 출력하시오.
+ * */
+ 
+ 
+ /**
+ 9)
+ * 모든 학생이 70점 이상인지 확인 (allMatch)
+ *  List<Student>의 모든 학생이 70점 이상인지 확인하고, 그 결과를 출력하시오.
+ * */
+ 
+ 
+ /**
+ 10)
+ * 전공이 'Computer Science'인 학생이 한 명이라도 있는지 확인(anyMatch)
+ *  List<Student>에서 전공이 'Computer Science'인 학생이 한 명이라도 있는지 확인하고, 그 결과를 출력하시오.
+ * */
+ 
+ 
+ 
+ 
+ 
+ 
+ 

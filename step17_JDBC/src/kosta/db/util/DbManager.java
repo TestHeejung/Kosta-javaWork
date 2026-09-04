@@ -15,7 +15,7 @@ public class DbManager {
 	 * */
      static {
     	 try {
-    	   Class.forName(DbProperties.DRVIER_NAME);
+    	   Class.forName(DbProperties.DRIVER_NAME);
     	 }catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}

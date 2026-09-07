@@ -25,7 +25,10 @@ public class DbManager {
 	 *연결
 	 * */
      public static Connection getConnection()throws SQLException {
-    	 Connection con = DriverManager.getConnection(DbProperties.URL, DbProperties.USER_ID, DbProperties.USER_PASS);
+    	 Connection con = DriverManager
+    			 .getConnection(DbProperties.URL, 
+    					 DbProperties.USER_ID, 
+    					 DbProperties.USER_PASS);
     	 return con;
      }
      

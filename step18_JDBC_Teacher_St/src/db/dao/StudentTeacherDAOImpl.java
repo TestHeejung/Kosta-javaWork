@@ -147,14 +147,8 @@ public class StudentTeacherDAOImpl implements StudentTeacherDAO {
 		PreparedStatement ps=null;
 		ResultSet rs=null;
 		Teacher teacher = null;
-		String sql="select * from v_teacher  where 강사번호=?" ;
+		String sql="select * from v_tear  where 강사번호=?" ;
 		
-		/*String sql="select  te.강사번호 ,강사이름, te.수강코드, 과목, ro.강의실번호, 수용인원\r\n"
-				+ "   from teacher te\r\n"
-				+ "		inner join subject su on te.수강코드=su.수강코드\r\n"
-				+ "		inner join sugangtb sug on su.수강코드=sug.수강코드\r\n"
-				+ "		inner join room ro on sug.강의실번호=ro.강의실번호 
-				where te.강사번호=?";*/
 		try {
 			con = DbManager.getConnection();
 			ps = con.prepareStatement(sql);
